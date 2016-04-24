@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Wayou">
+        <meta name="description" content="Quanta | This is my kingdom">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <title>骐思妙想</title>
+        <link rel="stylesheet" href="/styles/hello.css">
+        <link rel="stylesheet" href="/styles/semantic.min.css">
+        <link rel="shortcut icon" href="/logo.ico" type="image/x-icon">
+        <link rel="icon" href="logo.ico" type="image/x-icon">
+    </head>
+    <body style="background-color: #DADADA;">
+        <div class="ui container" style="padding-top: 2%;height: calc(100% - 60px);">
+            <div style="height: 5%;margin-bottom: -3em;margin-left: 14px;">
+                <h1>聊一聊<span style="font-size: 14px;">共<span id="peopleNo" style="font-size: 15px;font-weight: bold;">0</span>人在线</span></h1>
+            </div>
+            <div class="ui piled segment" style="height: 78%;margin-top: 4em;margin-bottom: 1.5em;">
+                <div id="historyMsg" class="ui comments"></div>
+            </div>
+            <div class="ui grid" style="height: 12%;">
+                <div class="sixteen wide column" style="height: 100%;">
+                    <div class="ui form" style="height: 100%;">
+                        <div class="field" style="height: 100%;">
+                          <textarea id="typeArea" style="resize: none;height: 100%;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="colorPanel" class="ui modal">
+          <i class="close icon"></i>
+          <div class="header">
+            选择颜色
+          </div>
+          <div class="content">
+            <div class="ui image">
+              <div class="ui four column cards">
+                  <a class="red card">
+                    <div class="image">
+                      <div class="ui red message">可乐红</div>
+                    </div>
+                  </a>
+                  <a class="orange card">
+                    <div class="image">
+                      <div class="ui orange message">甘肃橘</div>
+                    </div>
+                  </a>
+                  <a class="yellow card">
+                    <div class="image">
+                      <div class="ui yellow message">日光黄</div>
+                    </div>
+                  </a>
+                  <a class="olive card">
+                      <div class="ui olive message">橄榄绿</div>
+                  </a>
+                  <a class="green card">
+                    <div class="image">
+                      <div class="ui green message">霆锋帽</div>
+                    </div>
+                  </a>
+                  <a class="teal card">
+                    <div class="image">
+                      <div class="ui teal message">你随意</div>
+                    </div>
+                  </a>
+                  <a class="blue card">
+                    <div class="image">
+                      <div class="ui blue message">天空蓝</div>
+                    </div>
+                  </a>
+                  <a class="violet card">
+                    <div class="image">
+                      <div class="ui violet message">蓝到紫</div>
+                    </div>
+                  </a>
+                  <a class="purple card">
+                    <div class="image">
+                      <div class="ui purple message">冷艳紫</div>
+                    </div>
+                  </a>
+                  <a class="pink card">
+                    <div class="image">
+                      <div class="ui pink message">脑残粉</div>
+                    </div>
+                  </a>
+                  <a class="brown card">
+                    <div class="ui brown message">土豪金</div>
+                  </a>
+                  <a class="grey card">
+                    <div class="image">
+                      <div class="ui grey message">有点灰</div>
+                    </div>
+                  </a>
+                  <a class="black card">
+                    <div class="image">
+                      <div class="ui black message">尊贵黑</div>
+                    </div>
+                  </a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="emojiPanel" class="ui modal">
+          <i class="close icon"></i>
+          <div class="content">
+            <div class="ui image">
+                <div class="ui 10 column grid cards">
+                    <div class="column" style="vertical-align: middle;">
+                        <img src="/content/emoji/1.gif" />
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="login" class="ui modal" style="max-width: 600px;min-width: 450px;">
+          <i class="close icon"></i>
+          <div class="content" style="background-color: rgba(255, 255, 255,0);">
+              <div class="ui success message">
+                <div class="header">大侠，请问尊姓大名？</div>
+              </div>
+            <div class="ui form warning">
+              <div class="field">
+                <input type="text" id="nickName" style="text-align: center;max-width: 530px;min-width: 370px;width: 75%;" placeholder="给自己起个别名吧~~"><button class="ui green button" style="margin-left: 10px;">确定</button> 
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <input type="hidden" id="hdnMyName" />
+        <footer style="position: fixed;bottom: 0;height: 60px;width: 100%;text-align: center;line-height: 60px;">
+            <button id="send" class="ui labeled icon orange button">
+              <i class="twitch icon"></i>
+              发射
+            </button>
+            <button id="color" class="ui labeled icon button">
+              <i class="paint brush icon"></i>
+              配色板
+            </button> 
+            <button id="emoji" class="ui labeled icon blue button">
+              <i class="drupal icon"></i>
+              表情
+            </button>
+        </footer>
+
+    <script type="text/javascript" src="/scripts/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="/scripts/semantic.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/hello.js"></script>
+    <script type="text/javascript" src="/scripts/google-analytics.js"></script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+.ui.piled.segment{
+	overflow: auto;
+	overflow-x: hidden; 
+}
+.ui.comments{
+	width:100%!important;
+	max-width: none!important;
+	padding: 10px; 
+}
+.ui.comments .comment{
+	width:100%;
+}
+.comment.comment-right a{
+    float: right!important;
+}
+.comment.comment-right .content{
+    margin-left: 0em!important;
+    margin-right: 3.5em;
+    text-align: right;
+}
+.ui.comments .comment .text{
+	position: relative;
+	left: 0;
+}
+.ui.comments .comment .text img{
+	max-width: 300px;
+	max-height: 300px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.ui.comments .comment. .text > div{
+	display: inline-block;
+}
+.ui.comments .comment.comment-right .text{
+	margin-left: 0;
+	margin-right: 10px;
+}
+.ui.comments .comment.comment-right .text img{
+	left: initial;
+    right: 0;
+}
+.ui.comments .comment.comment-right .text > div{
+	display: inline-block;
+}
+.comment .content{
+	position: relative;
+}
+.comment.comment-right .content .metadata{
+	margin-right: .5em;
+}
+#emojiPanel .grid .column:hover{
+	border:2px blue solid;
+}
+.helloCenter{
+	width: 90%;
+	max-width: 800px;
+	margin:auto!important;
+	text-align: center;
+}
+@media only screen and (max-width: 767px){
+	.ui.column.grid.cards .column{
+		width: auto;
+	}
+}
